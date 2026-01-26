@@ -371,7 +371,7 @@
                 <div class="mb-2 d-flex justify-content-center">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="mode" id="defaultMode" value="default" checked>
-                            <label class="form-check-label" for="defaultMode">Default 🤓 🤔</label>
+                            <label class="form-check-label" for="defaultMode">Default 🤔</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="mode" id="proMode" value="pro">
@@ -615,6 +615,23 @@
 
 
                             <div class="accordion-body">
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="variable"
+                                     data-code="let {name};"
+                                     data-editable="name"
+                                     data-tooltip-en="Declaring a variable."
+                                     data-tooltip-tt="Үзгәрешле барлыкка килү"
+                                     data-tooltip-ru="Обьявление переменной."
+                                     data-tooltip-current="let variables name;"
+                                     data-text-en="Declaring a variable.: let name;"
+                                     data-text-tt="Үзгәрешле барлыкка килү: let name;"
+                                     data-text-ru="Обьявление переменной: let name;">
+                                </div>
+                                <!-- / code block -->
+
                                 <!-- code block -->
                                 <div class="block" data-pro="true"
                                      draggable="true"
@@ -654,7 +671,7 @@
                                      data-tooltip-en="Declare a constant (unchangeable value)"
                                      data-tooltip-tt="Дәвамлы кыйммәт бирү (үзгәртелми)"
                                      data-tooltip-ru="Объявление константы (неизменяемое значение)"
-                                     data-tooltip-current=""
+                                     data-tooltip-current="Constant: const PI = 3.14"
                                      data-text-en="Constant: const PI = 3.14"
                                      data-text-tt="Дәвамлы: const PI = 3.14"
                                      data-text-ru="Константа: const PI = 3.14">
@@ -666,8 +683,8 @@
                                      data-type="string"
                                      data-code='let {name} = "{value}";'
                                      data-editable="name, value"
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
+                                     data-tooltip-en="String"
+                                     data-tooltip-tt="Сүзләр"
                                      data-tooltip-ru="Объявление строки с именем и начальным значением"
                                      data-tooltip-current="let string = 'text';"
                                      data-text-en='String: let string = "text";'
@@ -675,50 +692,21 @@
                                      data-text-ru='Строка: let string = "text";'>
                                 </div>
                                 <!-- / code block --> 
-                                <!-- code block -->
-                                <div class="block" data-pro="true"
-                                     draggable="true"
-                                     data-type="variables"
-                                     data-code="let {name};"
-                                     data-editable="name"
-                                     data-tooltip-en="Declaring multiple variables"
-                                     data-tooltip-tt="Берничә үзгәрешле игълан итү"
-                                     data-tooltip-ru="Объявление нескольких переменных"
-                                     data-tooltip-current="let x, y, z"
-                                     data-text-en="Variables: let x, y, z;"
-                                     data-text-tt="Variables: let x, y, z;"
-                                     data-text-ru="Variables: let x, y, z;">
-                                </div>
-                                <!-- / code block -->
+
+
 
                                 <p class="accordion-header">Примеры: ⌨️</p>
-
-                                <!-- code block -->
-                                <div class="block"
-                                     draggable="true"
-                                     data-type="Onli_Code"
-                                     data-code="// Создать переменную а \n let a; // объявление переменной a"
-                                     data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=" переменной."
-                                     data-tooltip-current="let a;"
-                                     data-text-en="Declaring a variable. let a;"
-                                     data-text-tt="Үзгәрешле барлыкка килү. let a;"
-                                     data-text-ru="Обьявление переменной. let a;">
-                                </div>
-                                <!-- / code block -->
-
+                                
                                 <!-- code block -->
                                 <div class="block"
                                      draggable="true"
                                      data-type="Onli_Code_1"
-                                     data-code="// Создаем несколько переменных \n var name, age, height;"
+                                     data-code="// Создаем несколько переменных \n let x, y, z;"
                                      data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
+                                     data-tooltip-en="Declaring multiple variables: let x, y, z;"
+                                     data-tooltip-tt="Берничә үзгәрешлеләрнең барлыкка килүе: let x, y, z;"
                                      data-tooltip-ru="Обьявление нескольких переменных."
-                                     data-tooltip-current=""
+                                     data-tooltip-current="Declaring multiple variables: let x, y, z;"
                                      data-text-en="Declaring multiple variables: let x, y, z;"
                                      data-text-tt="Берничә үзгәрешлеләрнең барлыкка килүе: let x, y, z;"
                                      data-text-ru="Обьявление нескольких переменных: let x, y, z;">
@@ -732,13 +720,14 @@
                                      data-code='// Присвоение переменной значения
 // После определения переменной ей можно присвоить какое-либо значение.  
 // Для этого применяется оператор присваивания (=):
+
 let animalsName = "Tom"; // animalsName содержит значение "Tom"
 let number = 0; // number хранит число 0 '
                                      data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
+                                     data-tooltip-en="Assigning a value to a variable"
+                                     data-tooltip-tt="Үзгәрешле мәгънә бирү"
                                      data-tooltip-ru="Присвоение переменной значения. "
-                                     data-tooltip-current=""
+                                     data-tooltip-current="Assigning a value to a variable"
                                      data-text-en="Assigning a value to a variable"
                                      data-text-tt="Үзгәрешле мәгънә бирү"
                                      data-text-ru="Присвоение переменной значения">
@@ -750,12 +739,12 @@ let number = 0; // number хранит число 0 '
                                      draggable="true"
                                      data-type="Onli_Code_1_2"
                                      data-code='//Объявление нескольких переменных:
-let a1 = 1;
-let b1 = 2; 
+let a1 = 0;
+let b1 = 1.6; 
 let c1 = "string";
 
 //Упрощённый вариант:
-let a2 = 1, b2 = 2, c2 = "string";
+let a2 = 1, b2 = 2.5, c2 = "string";
 
 //Объявление всех переменных, а потом присвоение им значений:
 
@@ -763,21 +752,21 @@ let a3, b3, c3; // объявляем все 3 переменные
 
 // Присваиваем переменным значения:
 
-a3 = 1; b3 = 2; c3 = "string"; 
+a3 = 1; b3 = 2.5; c3 = "string"; 
 
 // Пример:
-let a = 0, b = 5, c;
+let a = 0.1, b = 5, c;
 
 //  переменная c не имеет значения. undefined
 
-console.log(a); /// 0
+console.log(a); /// 0.1
 console.log(b); /// 5
 console.log(c); /// undefined'
                                      data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
+                                     data-tooltip-en="Declaring multiple variables"
+                                     data-tooltip-tt="Берничә үзгәрешлеләрнең барлыкка килүе"
                                      data-tooltip-ru="Объявление нескольких переменных."
-                                     data-tooltip-current=""
+                                     data-tooltip-current="Declaring multiple variables"
                                      data-text-en="Declaring multiple variables"
                                      data-text-tt="Берничә үзгәрешлеләрнең барлыкка килүе"
                                      data-text-ru="Обьявление нескольких переменных.">
@@ -2160,7 +2149,7 @@ console.log(doubled); // [2, 4, 6]</code>
                                 </div>
                                 <!-- / accordion-item -->
 
-                                <!-- accordion-item -->
+                                <!-- accordion-item. Как работают массивы и циклы-->
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                     <button class="accordion-button collapsed"
@@ -2264,25 +2253,26 @@ console.log(doubled); // [2, 4, 6]</code>
                                 <!-- /Вложенный аккордеон -->
                                 
                                 <!-- code block -->
-                                <div class="block"
+                                <div class="block" data-pro="true"
                                      draggable="true"
                                      data-type="Onli_Code_2_1"
                                      data-code="// Числа (Number): Используются для работы с числами. \n
 let count = 25; // целое число
+let count2 = -50; // отрицательное число
 let price = 19.99; // дробное число"
                                      data-editable=""
-                                     data-tooltip-en="Data types in JS"
-                                     data-tooltip-tt="JS дагы мәгълүмат төрләре"
-                                     data-tooltip-ru="Типы данных в JS"
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
+                                     data-tooltip-en="Number"
+                                     data-tooltip-tt="Исәп"
+                                     data-tooltip-ru="Числа"
+                                     data-tooltip-current="Number"
+                                     data-text-en="Number"
+                                     data-text-tt="Исәп"
                                      data-text-ru="Числа (Number)">
                                 </div>
                                 <!-- / code block -->
 
                                 <!-- code block -->
-                                <div class="block"
+                                <div class="block" data-pro="true"
                                      draggable="true"
                                      data-type="Onli_Code_2_2"
                                      data-code='// Строки (String): Используются для работы с текстом. \n
@@ -2296,18 +2286,18 @@ console.log(greeting); /// Hello, Tom
 
 console.log(greeting_new);'
                                      data-editable=""
-                                     data-tooltip-en="Data types in JS"
-                                     data-tooltip-tt="JS дагы мәгълүмат төрләре"
-                                     data-tooltip-ru="Типы данных в JS"
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
+                                     data-tooltip-en="String"
+                                     data-tooltip-tt="Юл"
+                                     data-tooltip-ru="Строки"
+                                     data-tooltip-current="String"
+                                     data-text-en="String"
+                                     data-text-tt="Юл"
                                      data-text-ru="Строки (String):">
                                 </div>
                                 <!-- / code block -->
 
                                 <!-- code block -->
-                                <div class="block"
+                                <div class="block" data-pro="true"
                                      draggable="true"
                                      data-type="Onli_Code_2_3"
                                      data-code='// Представляют логические значения: 
@@ -2320,21 +2310,36 @@ console.log("isStudent ? :", isStudent); /// true
 console.log("isActive ? :", isActive); /// false
 '
                                      data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru="Обьявление сразу нескольких переменных. "
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
+                                     data-tooltip-en="Boolean"
+                                     data-tooltip-tt="Логик"
+                                     data-tooltip-ru="Логический. "
+                                     data-tooltip-current="Boolean"
+                                     data-text-en="Boolean"
+                                     data-text-tt="Логик"
                                      data-text-ru="Булевы / логические (Boolean: true / false)">
                                 </div>
                                 <!-- / code block -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 <!-- code block -->
-                                <div class="block"
+                                <div class="block" data-pro="true"
                                      draggable="true"
                                      data-type="Onli_Code_2_4"
-                                     data-code='// Массив (Array): Используются для хранения списков значений. \n
+                                     data-code='// Массив (Array): Используются для хранения списков значений [ ]. \n
 let numbers = [1, 2, 4, 5]; // массив чисел
 let fruits = ["apple", "banana", "orange"]; // Одномерный масиив строк.
 
@@ -2348,21 +2353,21 @@ console.log("fruits :", fruits); /// fruits : ["apple", "banana", "orange"]
  console.log(fruits[1]); /// banana
 '
                                      data-editable="name,value"
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
+                                     data-tooltip-en="Array"
+                                     data-tooltip-tt="Массив"
+                                     data-tooltip-ru="Массив"
+                                     data-tooltip-current="Array"
                                      data-text-en="Array"
-                                     data-text-tt=""
+                                     data-text-tt="Массив (Array)"
                                      data-text-ru="Массив (Array)">
                                 </div>
                                 <!-- / code block -->
 
                                 <!-- code block -->
-                                <div class="block"
+                                <div class="block" data-pro="true"
                                      draggable="true"
                                      data-type="Onli_Code_2_5"
-                                     data-code='// Двумерный массив — это массив, элементы которого являются массивами.
+                                     data-code='// Двумерный массив — это массив, элементы которого являются массивами [ [ ] ].
 
 //Концептуально двумерный массив можно представить в виде таблицы с рядами и колонками:
 //Где первый индекс указывает на ряд (строку), а второй — на колонку (столбец).
@@ -2446,24 +2451,119 @@ matrix.forEach((row, i) => {
 });
 
 '
-                                     data-editable="name,value"
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
-                                     data-text-en="Array"
-                                     data-text-tt=""
-                                     data-text-ru="Массив (Array)">
+                                     data-editable=""
+                                     data-tooltip-en="Array 2"
+                                     data-tooltip-tt="Массив 2"
+                                     data-tooltip-ru="Массив 2"
+                                     data-tooltip-current="Array 2"
+                                     data-text-en="Array 2"
+                                     data-text-tt="Массив 2"
+                                     data-text-ru="Массив 2">
                                 </div>
                                 <!-- / code block -->
 
 
-                                
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_2_6"
+                                     data-code='// Трёхмерные массивы в JavaScript \n
+
+Трёхмерный массив — это массив массивов массивов [ [ [] ] ] : 
+    каждый элемент представляет собой двумерный массив (матрицу), 
+    а совокупность таких матриц образует «куб» данных.
+
+let cube = [
+    [ [ 1, 2 ],  [ 3, 4 ] ],
+    [ [ 5, 6 ],  [ 7, 8 ] ],
+    [ [ 9, 10 ], [ 11, 12 ] ]
+];
+
+//Структура:
+
+//3 «слоя» (первый индекс i)
+
+//В каждом слое — 2 строки (второй индекс j)
+
+//В каждой строке — 2 элемента (третий индекс k)
+
+Д//оступ к элементам
+//Для обращения к элементу нужны три индекса:
+
+
+console.log(cube[0][0][0]); // 1 (1‑й слой, 1‑я строка, 1‑й элемент)
+console.log(cube[2][1][0]); // 11 (3‑й слой, 2‑я строка, 1‑й элемент)
+
+
+
+//Создание через циклы
+//Динамическое создание куба 3 × 3 × 3:
+
+
+let depth = 3, rows = 3, cols = 3;
+let cube = [];
+
+for (let i = 0; i < depth; i++) {
+  cube[i] = [];
+  for (let j = 0; j < rows; j++) {
+    cube[i][j] = [];
+    for (let k = 0; k < cols; k++) {
+      cube[i][j][k] = i * rows * cols + j * cols + k + 1;
+    }
+  }
+}
+//Результат:
+
+//cube[0][0][0] → 1
+
+//cube[1][1][1] → 14
+
+//cube[2][2][2] → 27
+
+//Перебор всех элементов
+//Вложенные циклы для итерации по всем уровням:
+
+
+for (let i = 0; i < cube.length; i++) {
+  for (let j = 0; j < cube[i].length; j++) {
+    for (let k = 0; k < cube[i][j].length; k++) {
+      console.log(`cube[${i}][${j}][${k}] = ${cube[i][j][k]}`);
+    }
+  }
+}
+//Изменение элементов
+//Прямое присваивание по трём индексам:
+
+
+//cube[1][0][1] = "NEW";
+//console.log(cube[1][0][1]); // NEW
+
+//Проверка размеров
+
+const layers = cube.length;           // 3 (количество слоёв)
+const rowsPerLayer = cube[0].length;    // 2 (строк в каждом слое)
+const colsPerRow = cube[0][0].length;   // 2 (элементов в каждой строке)
+
+
+
+
+
+'
+                                     data-editable=""
+                                     data-tooltip-en="Array"
+                                     data-tooltip-tt="Массив 3"
+                                     data-tooltip-ru="Массив 3. "
+                                     data-tooltip-current="Array"
+                                     data-text-en="Array"
+                                     data-text-tt="Массив 3"
+                                     data-text-ru="Массив 3">
+                                </div>
+                                <!-- / code block -->
 
                                 <!-- code block -->
                                 <div class="block"
                                      draggable="true"
-                                     data-type="Onli_Code_2_6"
+                                     data-type="Onli_Code_2_7"
                                      data-code='// Undefined
 // Undefined в JavaScript — примитивное значение, которое означает, 
  // что переменной уже существует, но её значение пока не определено.
@@ -2508,11 +2608,247 @@ console.log(5/0); /// Infinity
 
                                  <p>Exemple: ⌨️</p>
 
-                                
                                 <!-- code block -->
-                                <div class="block"
+                                <div class="block" data-pro="true"
                                      draggable="true"
-                                     data-type="Onli_Code_2_5"
+                                     data-type="Onli_Code_2_8"
+                                     data-code="
+// Пример создание и вывод 2 мерного массива
+//создать матрицу размером rows × cols, заполнить случайными целыми //числами от min до max, вывести в консоль.
+
+//Функция create2DArray
+// принимает на вход. rows, cols, - кол-во строк и стобцов
+//    min, max - числа от - до
+//return matrix; - возврачает массив
+function create2DArray(rows, cols, min, max) {
+  const matrix = [];
+  
+  for (let i = 0; i < rows; i++) {
+    matrix[i] = [];
+    for (let j = 0; j < cols; j++) {
+      matrix[i][j] = Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+  }
+  
+  return matrix;
+}
+
+
+// Пример: матрица 3×4, числа от 1 до 100
+const myMatrix = create2DArray(3, 4, 1, 100);
+
+
+// Вывод в консоль (построчно)
+console.log('Двумерный массив (матрица 3×4):');
+myMatrix.forEach(row => console.log(row));
+
+
+//Двумерный массив (матрица 3×4): (случайные числа)
+//  [ 42, 7, 88, 15 ]
+//  [ 93, 56, 3, 71 ]
+//  [ 29, 64, 50, 99 ]
+
+"
+                                     data-editable=""
+                                     data-tooltip-en="Two-dimensional array"
+                                     data-tooltip-tt="Ике үлчәмле массив"
+                                     data-tooltip-ru="Двумерный массив"
+                                     data-tooltip-current="Two-dimensional array"
+                                     data-text-en="Two-dimensional array"
+                                     data-text-tt="Ике үлчәмле массив"
+                                     data-text-ru="Двумерный массив">
+                                </div>
+                                <!-- / code block -->
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_2_9"
+                                     data-code="
+// Пример создание и вывод 3 мерного массива
+
+//Трёхмерный массив («куб»)
+//Задача: создать трёхмерный массив размером depth × rows × cols, //заполнить случайными целыми числами от min до max, вывести слоями.
+
+// Функция create3DArray, принимает на вход 5 чисел (переменных) 
+//   создает 3х мерный массив, заполняет случайными числами (min - max)
+function create3DArray(depth, rows, cols, min, max) {
+  const cube = [];
+  
+  for (let i = 0; i < depth; i++) {
+    cube[i] = [];
+    for (let j = 0; j < rows; j++) {
+      cube[i][j] = [];
+      for (let k = 0; k < cols; k++) {
+        cube[i][j][k] = Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+    }
+  }
+  
+  return cube;
+}
+
+
+// Пример: куб 2×3×4, числа от 1 до 50
+const myCube = create3DArray(2, 3, 4, 1, 50);
+
+
+
+// Вывод в консоль (по слоям)
+console.log('Трёхмерный массив (куб 2×3×4):');
+for (let layer = 0; layer < myCube.length; layer++) {
+  console.log(`Слой ${layer}:`);
+  myCube[layer].forEach(row => console.log('  ', row));
+}
+
+
+//Трёхмерный массив (куб 2×3×4):
+//Слой 0:
+//   [ 12, 45, 7, 23 ]
+//   [ 31, 2, 44, 18 ]
+//   [ 9, 37, 29, 6 ]
+//Слой 1:
+//   [ 41, 14, 33, 8 ]
+//   [ 25, 19, 47, 3 ]
+//   [ 36, 11, 22, 40 ]
+
+                                     "
+                                     data-editable=""
+                                     data-tooltip-en="Three-dimensional array (cube)."
+                                     data-tooltip-tt="Өч үлчәмле массив."
+                                     data-tooltip-ru="Трёхмерный массив (куб)."
+                                     data-tooltip-current="Three-dimensional array (cube)."
+                                     data-text-en="Three-dimensional array (cube)."
+                                     data-text-tt="Өч үлчәмле массив."
+                                     data-text-ru="Трёхмерный массив (куб).">
+                                </div>
+                                <!-- / code block -->
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_2_11"
+                                     data-code="
+
+// таблица умножения:
+
+console.log('\nТаблица умножения. \n')
+
+// Пример: таблица умножения 2-9
+
+// i — первый множитель (от 2 до 9)
+for (let i = 2; i <= 9; i++) {
+     // j — второй множитель (от 1 до 10)
+    for (let j = 1; j <= 10; j++) {
+        // Вывод: '2 × 1 = 2', '2 × 2 = 4', ...
+        console.log(`${i} × ${j} = ${i * j}`);
+    }
+    console.log(''); // Пустая строка между группами
+}
+
+"
+                                     data-editable=""
+                                     data-tooltip-en="Multiplication table"
+                                     data-tooltip-tt="Тапкырлау таблицасы"
+                                     data-tooltip-ru="Таблица умножения"
+                                     data-tooltip-current="Multiplication table"
+                                     data-text-en="Multiplication table"
+                                     data-text-tt="Тапкырлау таблицасы"
+                                     data-text-ru="Таблица умножения">
+                                </div>
+                                <!-- / code block -->
+
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_2_12"
+                                     data-code="
+// таблица Пифагора (квадратная сетка).
+
+//Выводит таблицу в виде матрицы, где:
+
+    //строки — первый множитель (i),
+    
+    //столбцы — второй множитель (j),
+    
+    //на пересечении — произведение i × j.
+
+console.log('\nТаблица Пифагора. \n')
+
+ // Заголовок (первая строка с числами 2..9)
+  let header = '    ';
+  for (let j = 2; j <= 9; j++) {
+    header += j + '   ';
+  }
+  console.log(header);
+  console.log('-'.repeat(header.length)); // Разделитель
+
+
+  // Тело таблицы
+  for (let i = 2; i <= 9; i++) {
+    let row = i + ' | ';
+    for (let j = 2; j <= 9; j++) {
+      row += (i * j) + '  ';
+    }
+    console.log(row);
+  }
+
+                                     "
+                                     data-editable=""
+                                     data-tooltip-en="The Pythagorean Table"
+                                     data-tooltip-tt="Пифагор таблицасы"
+                                     data-tooltip-ru="Таблица Пифагора"
+                                     data-tooltip-current="The Pythagorean Table"
+                                     data-text-en="The Pythagorean Table"
+                                     data-text-tt="Пифагор таблицасы"
+                                     data-text-ru="Таблица Пифагора">
+                                </div>
+                                <!-- / code block -->
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_2_13"
+                                     data-code="
+// Пример случайное число
+// Генерация случайного числа
+
+let max = 8, min = -2;
+
+//let rand = Math.floor(Math.random() * (max - min + 1)) + min;
+let rand = Math.floor(Math.random() * 9) + -8;
+
+console.log('Random numbers: ', rand);
+
+// Math.random() → число от 0 до <1.
+
+// Умножаем на диапазон (max − min + 1), округляем вниз → получаем целое//число от 0 до max − min.
+
+// Прибавляем min → получаем число от min до max.
+
+// Диапазон чисел:
+
+// min и max (например, -10, 10 для отрицательных чисел).
+                                     "
+                                     data-editable=""
+                                     data-tooltip-en="Random numbers"
+                                     data-tooltip-tt="Очраклы саннар"
+                                     data-tooltip-ru="Случайные числа"
+                                     data-tooltip-current="Random numbers"
+                                     data-text-en="Random numbers"
+                                     data-text-tt="Очраклы саннар"
+                                     data-text-ru="Случайные числа">
+                                </div>
+                                <!-- / code block -->
+
+
+
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_2_14"
                                      data-code='// Создание строк:
 let str1 = "Hello";
 let str2 = "Pyshok";
@@ -2544,12 +2880,12 @@ let upperCase = concatenated.toUpperCase(); /// "HELLO PYSHOK"
 console.log(`Заглавные буквы:  ${upperCase}`);
 '
                                      data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru="Сложение строк и Свойства"
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
+                                     data-tooltip-en="Addition and Properties of strings"
+                                     data-tooltip-tt="Юлларның кушылуы һәм үзлекләре"
+                                     data-tooltip-ru="Сложение и Свойства строк"
+                                     data-tooltip-current="Addition and Properties of strings"
+                                     data-text-en="Addition and Properties of strings"
+                                     data-text-tt="Юлларның кушылуы һәм үзлекләре"
                                      data-text-ru="Сложение строк и св-ва строки">
                                 </div>
                                 <!-- / code block -->
@@ -2557,7 +2893,7 @@ console.log(`Заглавные буквы:  ${upperCase}`);
                                 <!-- code block -->
                                 <div class="block"
                                      draggable="true"
-                                     data-type="Onli_Code_2_7"
+                                     data-type="Onli_Code_2_15"
                                      data-code='// Undefined
 // Undefined в JavaScript — примитивное значение, которое означает, 
  // что переменной уже существует, но её значение пока не определено.
@@ -2840,6 +3176,9 @@ console.log(5/0); /// Infinity
                     <button id="run-code" class="btn btn-success btn-code"><i class="fas fa-play"></i> <span id="btn-run">Run Code</span></button>
                     <button id="clear-workspace" class="btn btn-danger btn-code"><i class="fas fa-trash"></i> <span id="btn-clear">Clear All</span></button>
                 </div>
+                <p class="mt-2"><b>Press => "F12" => Console => "Run Code".</b><br>
+                    Нажмите => "F12" => Console => "Запустить код".<br>
+                    Басыгыз = > " F12 "= > Console = > "Кодны башкару".</p>
             </div>
         </div>
 
@@ -2851,6 +3190,11 @@ console.log(5/0); /// Infinity
                 <div class="controls">
                     <button id="copy-code" class="btn btn-outline-secondary btn-code"><i class="fas fa-copy"></i> <span id="btn-copy">Copy Code</span></button>
                 </div>
+                <p class="mt-2"><b>Online JavaScript Compilers:</b></p>
+                <a href="https://www.codechef.com/ide">https://www.codechef.com/ide</a>
+                <br><br>
+                <a href="https://ideone.com/l/javascript">https://ideone.com/l/javascript</a>
+                <a href="https://www.jdoodle.com/html-css-javascript-online-editor-ide">https://www.jdoodle.com/html-css-javascript-online-editor-ide</a>
             </div>
         </div>
         </div>
@@ -3158,8 +3502,8 @@ console.log(5/0); /// Infinity
                 html += '<span id="lbl-variable">CONST: const </span> <input type="text" value="PI" data-field="name"> = <input type="text" value="3.14" data-field="value">';
             }else if (type === 'string') {
                 html += '<span id="lbl-variable">String: let </span> <input type="text" value="string" data-field="name"> = <input type="text" value="text" data-field="value">'; 
-            } else if (type === 'variables') {
-                html += '<span id="lbl-variable">Variables: let </span> <input type="text" value="x, y, z" data-field="name">';
+            } else if (type === 'variable') {
+                html += '<span id="lbl-variable">Variable: let </span> <input type="text" value="name" data-field="name">';
             }
 
             else if (type === 'output') {
@@ -3411,8 +3755,7 @@ console.log(5/0); /// Infinity
                 updateCodeOutput();
             }
         });
-
-       
+     
 
     </script>
 </body>
