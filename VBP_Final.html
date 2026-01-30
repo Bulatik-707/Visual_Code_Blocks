@@ -4482,68 +4482,71 @@ while (true) {
 Виды циклов в JavaScript (с примерами)
 for — когда известно число итераций.
 
-javascript
+
 for (let i = 0; i < 3; i++) {
   console.log(`Шаг ${i}`);
 }
 // Вывод: Шаг 0, Шаг 1, Шаг 2
 while — пока условие истинно (число итераций неизвестно).
 
-javascript
+
 let count = 0;
 while (count < 3) {
   console.log(count);
   count++;
 }
 // Вывод: 0, 1, 2
+
 do...while — тело выполняется хотя бы один раз, затем проверяется условие.
 
-javascript
+
 let x = 5;
 do {
   console.log(x);
   x--;
 } while (x > 0);
 // Вывод: 5, 4, 3, 2, 1
+
 for...of — перебор элементов итерируемых объектов (массивы, строки).
 
-javascript
+
 const arr = ['a', 'b', 'c'];
 for (const item of arr) {
   console.log(item);
 }
 // Вывод: a, b, c
+
 for...in — перебор ключей объекта.
 
-javascript
+
 const obj = {x: 1, y: 2};
 for (const key in obj) {
   console.log(`${key}: ${obj[key]}`);
 }
 // Вывод: x: 1, y: 2
+
 Управление циклом: ключевые операторы
 break — прервать цикл немедленно.
 
-javascript
 for (let i = 0; i < 10; i++) {
   if (i === 5) break;
   console.log(i);
 }
 // Вывод: 0, 1, 2, 3, 4 (на 5 цикл остановится)
+
 continue — пропустить текущую итерацию и перейти к следующей.
 
-javascript
 for (let i = 0; i < 5; i++) {
   if (i % 2 === 0) continue;
   console.log(i); // выводятся только нечётные
 }
 // Вывод: 1, 3
+
 Бесконечный цикл
 Это цикл, который не имеет условия выхода или условие никогда не становится ложным.
 
 Пример:
 
-javascript
 while (true) {
   console.log("Этот текст будет печататься вечно!");
 }
@@ -4586,158 +4589,187 @@ while (true) {
 1. Цикл for
 Используется, когда известно количество повторений.
 
-Синтаксис:
+Синтаксис: "for(От; До; Как?)"
 
-javascript
 for (начальное_значение; условие; шаг) {
-  // код
+    // код
 }
+
 Примеры:
 
 Простая итерация (вывод чисел от 0 до 4):
 
-javascript
 for (let i = 0; i < 5; i++) {
-  console.log(i);
+    console.log(i);
 }
 // Вывод: 0, 1, 2, 3, 4
+
+
 Обратный отсчёт (от 5 до 1):
 
-javascript
 for (let i = 5; i > 0; i--) {
-  console.log(i);
+    console.log(i);
 }
 // Вывод: 5, 4, 3, 2, 1
+
 Шаг +2 (чётные числа от 0 до 8):
 
-javascript
 for (let i = 0; i <= 8; i += 2) {
-  console.log(i);
+    console.log(i);
 }
 // Вывод: 0, 2, 4, 6, 8
+
+
 2. Цикл while
 Выполняется, пока условие истинно. Количество итераций заранее неизвестно.
 
 Синтаксис:
 
-javascript
 while (условие) {
   // код
 }
+
+
 Пример: запрос пароля до верного ввода:
 
-javascript
 let password = '';
 while (password !== '1234') {
-  password = prompt('Введите пароль (подсказка: 1234)');
+    password = prompt('Введите пароль (подсказка: 1234)');
 }
 alert('Добро пожаловать!');
+
+
 3. Цикл do...while
 Тело цикла выполняется хотя бы один раз, затем проверяется условие.
 
 Синтаксис:
 
-javascript
 do {
-  // код
+    // код
 } while (условие);
+
 Пример: генерация случайного числа до выпадения 6:
 
-javascript
 let randomNumber = 0;
 do {
-  randomNumber = Math.floor(Math.random() * 6) + 1;
-  console.log(`Выпало: ${randomNumber}`);
+    randomNumber = Math.floor(Math.random() * 6) + 1;
+    console.log(`Выпало: ${randomNumber}`);
 } while (randomNumber !== 6);
 console.log('Ура! Выпала шестёрка!');
+
 4. Цикл for...of
 Перебирает значения итерируемых объектов (массивы, строки, Set, Map и др.).
 
 Синтаксис:
 
-javascript
 for (const элемент of коллекция) {
-  // код
+    // код
 }
+
 Примеры:
 
 Массив:
 
-javascript
 const fruits = ['яблоко', 'банан', 'вишня'];
 for (const fruit of fruits) {
-  console.log(fruit);
+    console.log(fruit);
 }
 // Вывод: яблоко, банан, вишня
+
+
 Строка:
 
-javascript
 const text = 'Привет';
 for (const char of text) {
-  console.log(char);
+    console.log(char);
 }
 // Вывод: П, р, и, в, е, т
+
+
 Set:
 
-javascript
 const uniqueNumbers = new Set([1, 2, 2, 3]);
 for (const num of uniqueNumbers) {
-  console.log(num);
+    console.log(num);
 }
 // Вывод: 1, 2, 3
+
 5. Цикл for...in
 Перебирает ключи объекта (не для массивов!).
 
 Синтаксис:
 
-javascript
 for (const ключ in объект) {
-  // код
+    // код
 }
+
 Пример: перебор свойств объекта:
 
-javascript
 const user = { name: 'Алиса', age: 25, city: 'Москва' };
 for (const key in user) {
-  console.log(`${key}: ${user[key]}`);
+    console.log(`${key}: ${user[key]}`);
 }
 // Вывод: name: Алиса, age: 25, city: Москва
+
+
 Операторы управления циклом
 break — прерывает цикл полностью.
 
-javascript
 for (let i = 1; i <= 10; i++) {
-  if (i === 5) break;
-  console.log(i);
+    if (i === 5) break;
+    console.log(i);
 }
 // Вывод: 1, 2, 3, 4 (на 5 цикл остановится)
+
+
 continue — пропускает текущую итерацию и переходит к следующей.
 
-javascript
 for (let i = 1; i <= 5; i++) {
-  if (i % 2 === 0) continue;
-  console.log(i); // выводятся только нечётные
+    if (i % 2 === 0) continue;
+    console.log(i); // выводятся только нечётные
 }
 // Вывод: 1, 3, 5
+
+Советы по использованию
+
+1. break полезен, когда нужно:
+
+    Найти элемент и выйти из цикла.
+
+    Прервать обработку при ошибке или особом условии.
+
+2. continue полезен, когда нужно:
+
+    Пропустить «неинтересные» итерации (например, чётные числа).
+
+    Оптимизировать цикл, избегая выполнения лишнего кода.
+
+3. Избегайте сложных условий с break/continue — это может усложнить чтение кода.
+        Иногда лучше использовать фильтрацию данных до цикла.
+
+4. Проверяйте граничные условия (например, j <= 5 вместо j < 5), 
+        чтобы не пропустить нужные значения.
+
+
+
 Типичные ошибки
 Бесконечный цикл (условие никогда не становится ложным):
 
-javascript
 // ОШИБКА:
 while (true) {
-  console.log('Этот цикл никогда не закончится!');
+    console.log('Этот цикл никогда не закончится!');
 }
 
 // ПРАВИЛЬНО:
 while (counter < 10) { /* код */ }
 Пропуск изменения счётчика в while:
 
-javascript
 let i = 0;
 while (i < 5) {
-  console.log(i);
-  // Забыли i++ → цикл будет бесконечным!
+    console.log(i);
+    // Забыли i++ → цикл будет бесконечным!
 }
+
 Итог:
 
 for — для известного числа итераций.
@@ -4755,65 +4787,72 @@ break / continue — управление ходом цикла.
 </code>
 
 <code>
-Бесконечный цикл — это цикл, который никогда не завершается при нормальных условиях, потому что его условие выхода всегда истинно (или механизм выхода не реализован).
+Бесконечный цикл — это цикл, который никогда не завершается при нормальных условиях, 
+    потому что его условие выхода всегда истинно (или механизм выхода не реализован).
 
 В JavaScript бесконечные циклы чаще всего создаются с помощью while или for.
 
 Как создать бесконечный цикл
 1. Через while (true)
-javascript
+
 while (true) {
-  console.log("Этот текст будет печататься вечно...");
-  // Нет условия выхода — цикл никогда не остановится
+    console.log("Этот текст будет печататься вечно...");
+    // Нет условия выхода — цикл никогда не остановится
 }
+
 2. Через for без условия выхода
-javascript
+
 for (let i = 0; ; i++) {  // условие выхода опущено
-  console.log(`Итерация ${i}`);
+    console.log(`Итерация ${i}`);
   // Цикл будет идти, пока не прервётся извне
 }
+
 3. Через for (;;)
-javascript
+
 for (;;) {
-  console.log("Бесконечный цикл без счётчика");
+    console.log("Бесконечный цикл без счётчика");
 }
+
 Почему цикл становится бесконечным? (типичные ошибки)
+
 Забыли изменить переменную в условии
 
-javascript
 let counter = 0;
 while (counter < 10) {
-  console.log(counter);
-  // Забыли: counter++ → цикл никогда не закончится!
+    console.log(counter);
+    // Забыли: counter++ → цикл никогда не закончится!
 }
+
+
 Условие всегда истинно
 
-javascript
 while (1 === 1) {  // 1 всегда равно 1
-  console.log("Бесконечность");
+    console.log("Бесконечность");
 }
+
 Ошибка в логике условия
 
-javascript
 for (let i = 10; i >= 0; i++) {  // i растёт, но условие i >= 0 всегда верно
-  console.log(i);
+    console.log(i);
 }
+
+
 Как выйти из бесконечного цикла
 Используйте break — он немедленно прерывает цикл.
 
 Пример с условием выхода:
 
-javascript
 let attempts = 0;
 while (true) {  // бесконечный цикл
-  console.log(`Попытка №${attempts + 1}`);
-  attempts++;
+    console.log(`Попытка №${attempts + 1}`);
+    attempts++;
 
-  if (attempts >= 5) {
-    console.log("Достаточно. Выходим из цикла.");
-    break;  // прерываем цикл после 5 итераций
-  }
+    if (attempts >= 5) {
+        console.log("Достаточно. Выходим из цикла.");
+        break;  // прерываем цикл после 5 итераций
+    }
 }
+
 Вывод:
 
 Попытка №1
@@ -4822,69 +4861,70 @@ while (true) {  // бесконечный цикл
 Попытка №4
 Попытка №5
 Достаточно. Выходим из цикла.
+
+
 Другой пример — ожидание ввода:
 
-javascript
 let input;
 while (true) {
-  input = prompt("Введите 'выход' для завершения:");
-  if (input === "выход") {
-    console.log("Цикл завершён.");
-    break;
-  }
-  console.log(`Вы ввели: ${input}`);
+    input = prompt("Введите 'выход' для завершения:");
+    if (input === "выход") {
+        console.log("Цикл завершён.");
+        break;
+    }
+    console.log(`Вы ввели: ${input}`);
 }
+
 Когда бесконечные циклы полезны?
-Серверные приложения — цикл работает постоянно, обрабатывая запросы.
+    Серверные приложения — цикл работает постоянно, обрабатывая запросы.
 
-Игровые циклы — постоянное обновление состояния игры.
+    Игровые циклы — постоянное обновление состояния игры.
 
-Мониторинг — проверка состояния системы в реальном времени.
+    Мониторинг — проверка состояния системы в реальном времени.
 
-Интерактивные программы — ожидание действий пользователя.
+    Интерактивные программы — ожидание действий пользователя.
 
 Пример игрового цикла:
 
-javascript
 function gameLoop() {
-  while (true) {
-    updateGameState();   // обновляем логику игры
-    renderGraphics();    // рисуем графику
-    checkInput();       // проверяем ввод игрока
+    while (true) {
+        updateGameState();   // обновляем логику игры
+        renderGraphics();    // рисуем графику
+        checkInput();       // проверяем ввод игрока
 
-    if (gameOver) {     // если игра завершена
-      break;            // выходим из цикла
+        if (gameOver) {     // если игра завершена
+        break;            // выходим из цикла
+        }
     }
-  }
 }
 
 Как избежать бесконечных циклов
-Проверяйте условие выхода — убедитесь, что оно когда‑нибудь станет false.
+    Проверяйте условие выхода — убедитесь, что оно когда‑нибудь станет false.
 
-Используйте счётчики — ограничьте количество итераций.
+    Используйте счётчики — ограничьте количество итераций.
 
-Тестируйте циклы с крайними значениями.
+    Тестируйте циклы с крайними значениями.
 
-Добавляйте таймауты (для асинхронных циклов).
+    Добавляйте таймауты (для асинхронных циклов).
 
-Используйте break осознанно — только при чётком условии выхода.
+    Используйте break осознанно — только при чётком условии выхода.
 
 Что делать, если цикл «завис»?
-В браузере: закройте вкладку или используйте Диспетчер задач (Ctrl+Shift+Esc → завершить процесс).
+    В браузере: закройте вкладку или используйте Диспетчер задач (Ctrl+Shift+Esc → завершить процесс).
 
-В Node.js: нажмите Ctrl+C в терминале.
+    В Node.js: нажмите Ctrl+C в терминале.
 
-В IDE: используйте кнопку «Stop» или «Kill».
+    В IDE: используйте кнопку «Stop» или «Kill».
 
 Итог:
 
-Бесконечный цикл создаётся, если условие выхода никогда не становится ложным.
+    Бесконечный цикл создаётся, если условие выхода никогда не становится ложным.
 
-Используйте break для принудительного выхода.
+    Используйте break для принудительного выхода.
 
-Такие циклы полезны в серверах, играх и мониторинге, но опасны при ошибках в логике.
+    Такие циклы полезны в серверах, играх и мониторинге, но опасны при ошибках в логике.
 
-Всегда проверяйте условия завершения цикла!
+    Всегда проверяйте условия завершения цикла!
 </code>
 </pre>
 
@@ -4896,41 +4936,12 @@ function gameLoop() {
                                 <!-- code block -->
                                 <div class="block" data-pro="true"
                                      draggable="true"
-                                     data-type="Onli_Code_5"
-                                     data-code=""
-                                     data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
-                                     data-text-ru="">
-                                </div>
-                                <!-- / code block -->
-
-                                <!-- code block -->
-                                <div class="block" data-pro="true"
-                                     draggable="true"
-                                     data-type="Onli_Code_"
-                                     data-code=""
-                                     data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
-                                     data-text-ru="">
-                                </div>
-                                <!-- / code block -->
-
-                                <!-- code block -->
-                                <div class="block" data-pro="true"
-                                     draggable="true"
                                      data-type="for"
-                                     data-code="for (let i = 0; i < {count};)"
-                                     data-editable="count,body"
+                                     data-code='for ({condition}){
+    console.log("{body}", i);
+}
+'
+                                     data-editable="condition,body"
                                      data-tooltip-en="Repeat code a specific number of times"
                                      data-tooltip-tt="Кодны билгеле санга кадәр табигы"
                                      data-tooltip-ru="Повторение кода указанное количество раз"
@@ -4944,17 +4955,212 @@ function gameLoop() {
                                 <div class="block" data-pro="true" data-pro="false"
                                      draggable="true"
                                      data-type="while"
-                                     data-code="while ({condition}) {    {body}}"
-                                     data-editable="condition,body"
+                                     data-code="let x = 0;
+
+while ({condition}) {    
+
+    console.log(x);
+    x++;
+
+}"
+                                     data-editable="condition"
                                      data-tooltip-en="Repeat while condition is true"
                                      data-tooltip-tt="Шарт дөрес булганча кабатлау"
                                      data-tooltip-ru="Повторять, пока условие истинно"
                                      data-tooltip-current=""
-                                     data-text-en="While: while (x < 10) { ... }"
-                                     data-text-tt="Әмма: while (x < 10) { ... }"
-                                     data-text-ru="Пока: while (x < 10) { ... }">
+                                     data-text-en="While: while (x <= 10) { ... }"
+                                     data-text-tt="Әмма: while (x <= 10) { ... }"
+                                     data-text-ru="Пока: while (x <= 10) { ... }">
                                 </div>
                                 <!-- / code block -->
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_5_0"
+                                     data-code="//do...while — тело выполняется хотя бы один раз, затем проверяется условие.
+
+let x = 5;
+
+do {
+
+    console.log(x);
+    x--;
+
+} while (x > 0);
+// Вывод: 5, 4, 3, 2, 1
+"
+                                     data-editable=""
+                                     data-tooltip-en="do...while"
+                                     data-tooltip-tt="do...while"
+                                     data-tooltip-ru="do...while"
+                                     data-tooltip-current="do...while"
+                                     data-text-en="do...while"
+                                     data-text-tt="do...while"
+                                     data-text-ru="do...while">
+                                </div>
+                                <!-- / code block -->
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_5_1"
+                                     data-code="// for...of — перебор элементов итерируемых объектов (массивы, строки).
+const arr = ['a', 'b', 'c'];
+
+for (const item of arr) {
+    console.log(item);
+}
+// Вывод: a, b, c
+"
+                                     data-editable=""
+                                     data-tooltip-en="for...of"
+                                     data-tooltip-tt="for...of"
+                                     data-tooltip-ru="for...of"
+                                     data-tooltip-current="for...of"
+                                     data-text-en="for...of"
+                                     data-text-tt="for...of"
+                                     data-text-ru="for...of">
+                                </div>
+                                <!-- / code block -->
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_5_2"
+                                     data-code="// for...in — перебор ключей объекта.
+
+const obj = {x: 1, y: 2};
+
+for (const key in obj) {
+    console.log(`${key}: ${obj[key]}`);
+}
+// Вывод: x: 1, y: 2
+
+                                     "
+                                     data-editable=""
+                                     data-tooltip-en="for...in"
+                                     data-tooltip-tt="for...in"
+                                     data-tooltip-ru="for...in"
+                                     data-tooltip-current="for...in"
+                                     data-text-en="for...in"
+                                     data-text-tt="for...in"
+                                     data-text-ru="for...in">
+                                </div>
+                                <!-- / code block -->
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_5_3"
+                                     data-code="// Управление циклом: ключевые операторы
+// break — прервать цикл немедленно.
+// continue — пропустить текущую итерацию и перейти к следующей.
+
+console.log('Пример 1: использование break');
+
+for (let i = 0; i < 10; i++) {
+
+    // цикл прерывается при i = 5.
+    if (i === 5) break; 
+    console.log(i);
+}
+// Вывод: 0, 1, 2, 3, 4 (на 5 цикл остановится)
+
+console.log('Пример 2: использование continue');
+
+for (let j = 0; j <= 5; j++) {
+    
+    // пропускаются чётные числа, выводятся нечётные.
+    if (j % 2 === 0) continue;
+    console.log(j); 
+}
+// Вывод: 1, 3, 5
+
+// Альтернативный вариант (более читаемый)
+console.log('Выводим нечетные числа, до 7');
+
+for (let k = 0; k < 10; k++) {
+    if (k > 8) break;           // выход при k > 8
+    if (k % 2 !== 0) {         // если нечётное
+        console.log(k);
+    }
+}
+"
+                                     data-editable=""
+                                     data-tooltip-en="break / continue"
+                                     data-tooltip-tt="break / continue"
+                                     data-tooltip-ru="break / continue"
+                                     data-tooltip-current="break / continue"
+                                     data-text-en="break / continue"
+                                     data-text-tt="break / continue"
+                                     data-text-ru="break / continue">
+                                </div>
+                                <!-- / code block -->
+
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_5_4"
+                                     data-code="// Бесконечный цикл
+let shouldContinue = true;
+
+console.log('Пример бесконечного цикла.')
+
+// Рабортает пока  while true
+while (shouldContinue) {
+
+    const input = prompt('Продолжить цикл? Y - да, N - нет.').trim().toLowerCase();
+
+    if (input === 'y') {
+        console.log('Продолжаем цикл!');
+    } 
+    else if (input === 'n'){
+        console.log('Цикл завершён.');
+        shouldContinue = false;
+    }
+    else {
+        console.log('Некорректный ввод. Пожалуйста, введите Y или N.');
+    }
+
+} 
+
+
+//// этот код будет потреблять памят (см. диспедчер задач).
+
+//while (true) {
+//    console.log('Этот текст будет печататься вечно...');
+//    // Нет условия выхода — цикл никогда не остановится
+//}
+
+//// Чтобы не было проблем 
+//// Если хотите проверить работу бесконечного цикла, добавьте условие выхода:
+
+//let counter = 0;
+
+//while (true) {
+//    console.log('Этот текст будет печататься...', counter);
+//    counter++;
+
+    // Автоматически остановимся через 1000 итераций
+//    if (counter >= 1000) {
+//        console.log('Цикл завершён принудительно.');
+//        break; // выход из цикла
+//    }
+//}
+"
+                                     data-editable=""
+                                     data-tooltip-en="The endless loop."
+                                     data-tooltip-tt="Чиксез цикл."
+                                     data-tooltip-ru="Бесконечный цикл."
+                                     data-tooltip-current="The endless loop."
+                                     data-text-en="The endless loop."
+                                     data-text-tt="Чиксез цикл."
+                                     data-text-ru="Бесконечный цикл.">
+                                </div>
+                                <!-- / code block -->
+
                             </div>
                         </div>
                     </div>
@@ -4984,17 +5190,13 @@ function gameLoop() {
                                     <div id="collapseVar" class="accordion-collapse collapse" data-bs-parent="#collapseVariables">
                                         <div class="accordion-body text-wrap">
 <pre>
-Функции в JavaScript: полное руководство
-Что такое функция
+Функции в JavaScript
+
 Функция — это независимый блок кода, который:
-
-    можно вызывать многократно;
-
-    может принимать входные данные (параметры);
-
-    может возвращать результат;
-
-    позволяет избежать дублирования кода.
+    * можно вызывать многократно;
+    * может принимать входные данные (параметры);
+    * может возвращать результат;
+    * позволяет избежать дублирования кода.
 
     Ссылки:
 
@@ -5002,176 +5204,161 @@ function gameLoop() {
     <a href=""></a>
 
 
-<code>
-Функции в JavaScript:
+<code>Функции в JavaScript:
 
 Способы объявления функций
 
 1. Function Declaration (объявление функции)
 
-function greet() {
-  console.log("Привет, мир!");
-}
-greet(); // вызов
+    function greet() {
+        console.log("Привет, мир!");
+    }
+    greet(); // вызов
+    
+    В результате при вызове функции бутет выполняться код { внутри функции } вывод: "Привет, мир!"
 
-    Можно вызывать до объявления (hoisting).
-
-    Имеет имя, доступное в текущей области видимости.
+    * Можно вызывать до объявления (hoisting).
+    * Имеет имя, доступное в текущей области видимости.
 
 2.Function Expression (функциональное выражение)
 
-const greet = function() {
-  console.log("Привет, мир!");
-};
-greet(); // вызов
-    Нельзя вызвать до объявления.
+    const greet = function() {
+        console.log("Привет, мир!");
+    };
+    greet(); // вызов
 
-    Может быть анонимной.
+    * Нельзя вызвать до объявления.
+    * Может быть анонимной.
 
 3. Стрелочная функция (arrow function)
 
-const greet = () => {
-  console.log("Привет, мир!");
-};
-greet(); // вызов
+    const greet = () => {
+        console.log("Привет, мир!");
+    };
+    greet(); // вызов
 
 // Для однострочных функций можно опустить фигурные скобки
 const add = (a, b) => a + b;
 console.log(add(2, 3)); // 5
 
-    Нет собственного this.
+    * Нет собственного this.
+    * Более компактный синтаксис.
 
-    Более компактный синтаксис.
+# Параметры и аргументы
+    * Параметры — переменные, указанные при объявлении функции.
+    * Аргументы — значения, передаваемые при вызове.
 
-Параметры и аргументы
-    Параметры — переменные, указанные при объявлении функции.
+    function greet(name, age = 18) { // name — параметр, age — параметр со значением по умолчанию
+        console.log(`Привет, ${name}! Тебе ${age} лет.`);
+    }
 
-    Аргументы — значения, передаваемые при вызове.
+    greet("Алиса", 25); // "Привет, Алиса! Тебе 25 лет."
+    greet("Боб");       // "Привет, Боб! Тебе 18 лет."
 
-function greet(name, age = 18) { // name — параметр, age — параметр со значением по умолчанию
-  console.log(`Привет, ${name}! Тебе ${age} лет.`);
-}
-
-greet("Алиса", 25); // "Привет, Алиса! Тебе 25 лет."
-greet("Боб");       // "Привет, Боб! Тебе 18 лет."
-
-Возвращаемое значение
+# Возвращаемое значение
 Функция может возвращать результат с помощью return:
 
-function multiply(a, b) {
-  return a * b;
-}
+    function multiply(a, b) {
+        return a * b;
+    }
 
-const result = multiply(4, 5);
-console.log(result); // 20
+    const result = multiply(4, 5);
+    console.log(result); // 20
 
 Важные моменты:
 
     Если return отсутствует, функция возвращает undefined.
-
     return немедленно завершает выполнение функции.
 
 Функции высшего порядка
 Функции, которые:
 
     принимают другие функции как аргументы;
-
     возвращают функции.
 
-function higherOrder(callback) {
-  callback();
-}
+    function higherOrder(callback) {
+        callback();
+    }
 
-function sayHello() {
-  console.log("Привет!");
-}
+    function sayHello() {
+        console.log("Привет!");
+    }
 
-higherOrder(sayHello); // Выведет "Привет!"
+    higherOrder(sayHello); // Выведет "Привет!"
 
 Замыкания
 Функция, которая «запоминает» своё лексическое окружение:
 
-javascript
-function createCounter() {
-  let count = 0;
-  return function() {
-    count++;
-    return count;
-  };
-}
+    function createCounter() {
+        let count = 0;
+        return function() {
+            count++;
+            return count;
+        };
+    }
 
-const counter = createCounter();
-console.log(counter()); // 1
-console.log(counter()); // 2
+    const counter = createCounter();
+    console.log(counter()); // 1
+    console.log(counter()); // 2
 
 Практические примеры
 
 1. Простая функция с параметром
 
-javascript
-function square(x) {
-  return x * x;
-}
-console.log(square(5)); // 25
+    function square(x) {
+        return x * x;
+    }
+
+    console.log(square(5)); // 25
 
 
 2. Функция с несколькими параметрами
 
-javascript
-function fullName(firstName, lastName) {
-  return `${firstName} ${lastName}`;
-}
-console.log(fullName("Иван", "Иванов")); // "Иван Иванов"
+    function fullName(firstName, lastName) {
+        return `${firstName} ${lastName}`;
+    }
+
+    console.log(fullName("Иван", "Иванов")); // "Иван Иванов"
 
 
 3. Стрелочная функция для массива
 
-const numbers = [1, 2, 3];
-const doubled = numbers.map(num => num * 2);
-console.log(doubled); // [2, 4, 6]
+    const numbers = [1, 2, 3];
+
+    const doubled = numbers.map(num => num * 2);
+
+    console.log(doubled); // [2, 4, 6]
 
 
 4. Функция с проверкой условия
 
-
-function isEven(number) {
-  return number % 2 === 0;
-}
-console.log(isEven(4)); // true
-console.log(isEven(5)); // false
+    function isEven(number) {
+        return number % 2 === 0;
+    }
+    console.log(isEven(4)); // true
+    console.log(isEven(5)); // false
 
 
 Советы по работе с функциями
-
     1. Используйте понятные имена — например, calculateTotal вместо ct.
-
     2. Делайте функции короткими — одна функция должна решать одну задачу.
-
     3. Используйте const и let вместо var.
-
     4. Не изменяйте переданные аргументы — возвращайте новый результат.
-
     5. Используйте параметры по умолчанию — это снижает риск ошибок.
-
     6. Документируйте функции — добавляйте комментарии о назначении и параметрах.
 
 Распространённые ошибки
-
     1. Отсутствие return — функция возвращает undefined.
-
     2. Изменение аргументов внутри функции — может привести к побочным эффектам.
-
     3. Слишком длинные функции — сложно читать и тестировать.
-
     4. Дублирование кода — вместо этого создайте отдельную функцию.
 </code>
-<code>
-    Зачем нужны функции (function )?
+<code>Зачем нужны функции (function )?
 
 Рассмотрим два варианта реализации простейшего калькулятора для сложения и вычитания: 
     без функций (линейный код) и с функциями (структурированный подход).
 
-Вариант 1. Без функций (линейный код)
+# Вариант 1. Без функций (линейный код)
 
 // Два числа для операций
 let a = 10;
@@ -5180,7 +5367,6 @@ let b = 5;
 // Сложение
 let sum = a + b;
 console.log(`Сумма ${a} и ${b}: ${sum}`); // Сумма 10 и 5: 15
-
 
 // Вычитание
 let difference = a - b;
@@ -5200,26 +5386,22 @@ console.log(`Сумма ${a} и ${b}: ${sum}`); // Сумма 7 и 3: 10
 difference = a - b;
 console.log(`Разность ${a} и ${b}: ${difference}`); // Разность 7 и 3: 4
 
-
 Минусы такого подхода:
-
-    код дублируется (операции сложения/вычитания написаны несколько раз);
-
-    сложно менять логику (нужно править везде);
-
-    трудно тестировать и поддерживать.
+    - код дублируется (операции сложения/вычитания написаны несколько раз);
+    - сложно менять логику (нужно править везде);
+    - трудно тестировать и поддерживать.
 
 
-Вариант 2. С функциями (структурированный код)
+# Вариант 2. С функциями (структурированный код)
 
 // Функция для сложения
 function add(x, y) {
-  return x + y;
+    return x + y;
 }
 
 // Функция для вычитания
 function subtract(x, y) {
-  return x - y;
+    return x - y;
 }
 
 // Используем функции для разных пар чисел
@@ -5242,31 +5424,32 @@ console.log(`add(2, 3) - subtract(5, 1): ${add(2, 3) - subtract(5, 1)}`); // 1
 
 
 Плюсы такого подхода:
-
-    Код не дублируется — операции определены один раз.
-
-    Легко менять логику — исправляем только в теле функции.
-
-    Проще тестировать — можно проверять каждую функцию отдельно.
-
-    Повторное использование — функции можно вызывать с любыми числами.
-
-    Читаемость — код чётко разделён на смысловые блоки.
+    + Код не дублируется — операции определены один раз.
+    + Легко менять логику — исправляем только в теле функции.
+    + Проще тестировать — можно проверять каждую функцию отдельно.
+    + Повторное использование — функции можно вызывать с любыми числами.
+    + Читаемость — код чётко разделён на смысловые блоки.
 
 
-Расширенный вариант: одна функция с выбором операции
+# Расширенный вариант 2.1: одна функция с выбором операции
 Можно объединить сложение и вычитание в одну функцию с параметром‑оператором:
 
 
 function calculate(x, y, operation) {
-  if (operation === '+') {
-    return x + y;
-  } else if (operation === '-') {
-    return x - y;
-  } else {
-    console.log('Неизвестная операция');
-    return null;
-  }
+
+    if (operation === '+') 
+    {
+        return x + y;
+    } 
+    else if (operation === '-') 
+    {
+        return x - y;
+    } 
+    else 
+    {
+        console.log('Неизвестная операция');
+        return null;
+    }
 }
 
 // Примеры вызовов
@@ -5276,17 +5459,14 @@ console.log(calculate(7, 3, '+'));  // 10
 console.log(calculate(7, 3, '-'));  // 4
 
 Преимущества:
+    + ещё меньше дублирования;
+    + легко добавить новые операции (*, / и т. д.).
 
-    ещё меньше дублирования;
-
-    легко добавить новые операции (*, / и т. д.).
-
-Итоги
-    Без функций — просто, но немасштабируемо. Подходит для крошечных скриптов.
-
-    С функциями — структурированно, повторно используемо, легко поддерживать. Лучший выбор для реального кода.
-
-    Одна функция с параметром — компромисс между гибкостью и компактностью.
+Итоги:
+    * Без функций — просто, но немасштабируемо. Подходит для крошечных скриптов.
+    * С функциями — структурированно, повторно используемо, легко поддерживать. 
+        Лучший выбор для реального кода.
+    * Одна функция с параметром — компромисс между гибкостью и компактностью.
 </code>
 </pre>
 
@@ -5294,6 +5474,120 @@ console.log(calculate(7, 3, '-'));  // 4
                                     </div>
                                 </div>
                                 <!-- / collapseVar -->
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="function"
+                                     data-code="function {name}() {    {body}}"
+                                     data-editable="name,body"
+                                     data-tooltip-en="Define a reusable block of code"
+                                     data-tooltip-tt="Кодның кабат кулланыла торган блогы"
+                                     data-tooltip-ru="Определение повторно используемого блока кода"
+                                     data-tooltip-current=""
+                                     data-text-en="Function: function calc() { ... }"
+                                     data-text-tt="Функция: function calc() { ... }"
+                                     data-text-ru="Функция: function calc() { ... }">
+                                </div>
+                                <!-- code block -->
+                                
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_6"
+                                     data-code='
+
+function greet() {
+    console.log("Hello, world!");
+}
+greet(); // Вызов: "Hello, world!"
+
+    
+// В результате при вызове функции бутет выполняться 
+//    код { внутри функции } вывод: "Привет, мир!"
+
+
+
+
+
+                                     '
+                                     data-editable=""
+                                     data-tooltip-en="Function Declaration"
+                                     data-tooltip-tt="Функцияне игълан итү"
+                                     data-tooltip-ru="Объявление функции"
+                                     data-tooltip-current="Function Declaration"
+                                     data-text-en="Function Declaration"
+                                     data-text-tt="Функцияне игълан итү"
+                                     data-text-ru="Объявление функции">
+                                </div>
+                                <!-- / code block -->
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_6"
+                                     data-code='
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+}
+
+greet("Alice"); // Вывод: "Hello, Alice!"
+greet("Bob");   // Вывод: "Hello, Bob!"
+
+
+
+                                     '
+                                     data-editable=""
+                                     data-tooltip-en="Functions with one parameter"
+                                     data-tooltip-tt="Бер параметрлы функцияләр"
+                                     data-tooltip-ru="Функции с одним параметром"
+                                     data-tooltip-current="Functions with one parameter"
+                                     data-text-en="Functions with one parameter"
+                                     data-text-tt="Бер параметрлы функцияләр"
+                                     data-text-ru="Функции с одним параметром">
+                                </div>
+                                <!-- / code block -->
+
+                                <!-- code block -->
+                                <div class="block" data-pro="true"
+                                     draggable="true"
+                                     data-type="Onli_Code_6"
+                                     data-code='
+function add(a, b) {
+    return a + b;
+}
+
+console.log(add(2, 3)); // Вывод: 5
+console.log(add(10, 5)); // Вывод: 15
+
+// Значения по умолчанию
+
+function multiply(a, b = 1) {
+    return a * b;
+}
+console.log(multiply(5));     // 5
+console.log(multiply(5, 3)); // 15
+
+// Функция с условным возвратом:
+
+function isEven(num) {
+    return num % 2 === 0;
+}
+console.log(isEven(4)); // true
+console.log(isEven(7)); // false
+
+
+                                     '
+                                     data-editable=""
+                                     data-tooltip-en="Functions with multiple parameters"
+                                     data-tooltip-tt="Берничә параметрлы функцияләр"
+                                     data-tooltip-ru="Функции с несколькими параметрами"
+                                     data-tooltip-current="Functions with multiple parameters"
+                                     data-text-en="Functions with multiple parameters"
+                                     data-text-tt="Берничә параметрлы функцияләр"
+                                     data-text-ru="Функции с несколькими параметрами">
+                                </div>
+                                <!-- / code block -->
 
                                 <!-- code block -->
                                 <div class="block" data-pro="true"
@@ -5311,70 +5605,8 @@ console.log(calculate(7, 3, '-'));  // 4
                                 </div>
                                 <!-- / code block -->
 
-                                <!-- code block -->
-                                <div class="block" data-pro="true"
-                                     draggable="true"
-                                     data-type="Onli_Code_"
-                                     data-code=""
-                                     data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
-                                     data-text-ru="">
-                                </div>
-                                <!-- / code block -->
 
-                                <!-- code block -->
-                                <div class="block" data-pro="true"
-                                     draggable="true"
-                                     data-type="Onli_Code_"
-                                     data-code=""
-                                     data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
-                                     data-text-ru="">
-                                </div>
-                                <!-- / code block -->
-
-                                <!-- code block -->
-                                <div class="block" data-pro="true"
-                                     draggable="true"
-                                     data-type="Onli_Code_"
-                                     data-code=""
-                                     data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
-                                     data-text-ru="">
-                                </div>
-                                <!-- / code block -->
-
-
-                                <!-- code block -->
-                                <div class="block" data-pro="true"
-                                     draggable="true"
-                                     data-type="function"
-                                     data-code="function {name}() {    {body}}"
-                                     data-editable="name,body"
-                                     data-tooltip-en="Define a reusable block of code"
-                                     data-tooltip-tt="Кодның кабат кулланыла торган блогы"
-                                     data-tooltip-ru="Определение повторно используемого блока кода"
-                                     data-tooltip-current=""
-                                     data-text-en="Function: function calc() { ... }"
-                                     data-text-tt="Функция: function calc() { ... }"
-                                     data-text-ru="Функция: function calc() { ... }">
-                                </div>
-                                <!-- code block -->
+                                
                             </div>
                         </div>
                     </div>
@@ -5928,10 +6160,10 @@ console.log(calculate(7, 3, '-'));  // 4
             } 
             // Loops
             else if ( type === 'for' ) {
-                html += '<span id="lbl-for">For:</span> i=0; i&lt;<input type="number" value="5" data-field="count">; i++) { <input type="text" value="" data-field="body"> }';
+                html += '<span id="lbl-for">For:</span> for( <input type="text" value="let i = 1; i < 5; i++" data-field="condition"> ) { <input type="text" value="step (Шаг)" data-field="body"> }';
             } 
             else if ( type === 'while' ) {
-                html += '<span id="lbl-while">While:</span> while (<input type="text" value="x < 10" data-field="condition">) { <input type="text" value="" data-field="body"> }';
+                html += '<span id="lbl-while">While:</span> while (<input type="text" value="x <= 10" data-field="condition">)';
             } 
             else if ( type === 'function' ) {
                 html += '<span id="lbl-function">Function:</span> <input type="text" value="calc" data-field="name">() { <input type="text" value="" data-field="body"> }';
@@ -5959,6 +6191,16 @@ console.log(calculate(7, 3, '-'));  // 4
                 return html;
             } 
             else if ( type === 'Onli_Code_4_0' || 'Onli_Code_4_1' ) {
+                html += block.textContent;
+                // Для примеров поля не редактируются
+                return html;
+            }
+            else if ( type === 'Onli_Code_5_0' || 'Onli_Code_5_1' || 'Onli_Code_5_2' || 'Onli_Code_5_3' || 'Onli_Code_5_4') {
+                html += block.textContent;
+                // Для примеров поля не редактируются
+                return html;
+            } 
+            else if ( type === 'Onli_Code_6_0' || 'Onli_Code_6_1' ) {
                 html += block.textContent;
                 // Для примеров поля не редактируются
                 return html;
