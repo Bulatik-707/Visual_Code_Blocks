@@ -729,7 +729,7 @@ add(5, 3); // Выведет: 8</text>
                             </h2>
                             <div id="collapseVar" class="accordion-collapse collapse" data-bs-parent="#collapseVariables">
                                 <div class="accordion-body text-wrap">
-                                    
+
 <pre>
     Переменные var, let и const.
 
@@ -5841,48 +5841,505 @@ else {
                                 <!-- code block -->
                                 <div class="block" data-pro="true"
                                      draggable="true"
-                                     data-type="Onli_Code_7"
-                                     data-code=""
+                                     data-type="Onli_Code_7_0"
+                                     data-code='// создаём одномерный, двумерный и трёхмерный массивы со случайными числами, 
+// затем находим для каждого минимум, максимум и среднее арифметическое.
+
+// 1. Создаём массивы со случайными числами
+
+// Одномерный массив: 10 элементов, числа от 1 до 100
+
+let oneDim = [];
+for (let i = 0; i < 10; i++) {
+    oneDim[i] = Math.floor(Math.random() * 100) + 1;
+}
+
+// Двумерный массив: 3 строки × 4 столбца, числа от 1 до 100
+
+let twoDim = [];
+for (let i = 0; i < 3; i++) 
+{
+    twoDim[i] = [];
+    for (let j = 0; j < 4; j++) 
+    {
+        twoDim[i][j] = Math.floor(Math.random() * 100) + 1;
+    }
+}
+
+// Трёхмерный массив: 2 слоя × 3 строки × 2 столбца, числа от 1 до 100
+
+let threeDim = [];
+for (let i = 0; i < 2; i++) 
+{
+    threeDim[i] = [];
+    for (let j = 0; j < 3; j++) 
+    {
+        threeDim[i][j] = [];
+        for (let k = 0; k < 2; k++) 
+        {
+            threeDim[i][j][k] = Math.floor(Math.random() * 100) + 1;
+        }
+    }
+}
+
+// 2. Обрабатываем одномерный массив
+
+console.log("Одномерный массив:", oneDim);
+
+let min1 = oneDim[0];
+let max1 = oneDim[0];
+let sum1 = 0;
+
+for (let i = 0; i < oneDim.length; i++) 
+{
+    if (oneDim[i] < min1) min1 = oneDim[i];
+    if (oneDim[i] > max1) max1 = oneDim[i];
+    sum1 += oneDim[i];
+}
+
+let avg1 = sum1 / oneDim.length;
+console.log(`Мин: ${min1}, Макс: ${max1}, Ср. арифм.: ${avg1.toFixed(2)}`);
+
+
+// 3. Обрабатываем двумерный массив
+
+console.log("\nДвумерный массив:", twoDim);
+
+
+let min2 = twoDim[0][0];
+let max2 = twoDim[0][0];
+let sum2 = 0;
+let count2 = 0;
+
+for (let i = 0; i < twoDim.length; i++) 
+{
+    for (let j = 0; j < twoDim[i].length; j++) 
+    {
+        if (twoDim[i][j] < min2) min2 = twoDim[i][j];
+        if (twoDim[i][j] > max2) max2 = twoDim[i][j];
+        sum2 += twoDim[i][j];
+        count2++;
+    }
+}
+
+let avg2 = sum2 / count2;
+console.log(`Мин: ${min2}, Макс: ${max2}, Ср. арифм.: ${avg2.toFixed(2)}`);
+
+// 4. Обрабатываем трёхмерный массив
+
+console.log("\nТрёхмерный массив:", threeDim);
+
+let min3 = threeDim[0][0][0];
+let max3 = threeDim[0][0][0];
+let sum3 = 0;
+let count3 = 0;
+
+for (let i = 0; i < threeDim.length; i++) 
+{
+    for (let j = 0; j < threeDim[i].length; j++) 
+    {
+        for (let k = 0; k < threeDim[i][j].length; k++) 
+        {
+            if (threeDim[i][j][k] < min3) min3 = threeDim[i][j][k];
+            if (threeDim[i][j][k] > max3) max3 = threeDim[i][j][k];
+            sum3 += threeDim[i][j][k];
+            count3++;
+        }
+    }
+}
+
+let avg3 = sum3 / count3;
+console.log(`Мин: ${min3}, Макс: ${max3}, Ср. арифм.: ${avg3.toFixed(2)}`);
+
+// Результат
+
+// Одномерный массив: [42, 7, 99, 15, 56, 31, 88, 24, 67, 11]
+// Мин: 7, Макс: 99, Ср. арифм.: 44.00
+
+// Двумерный массив: [[23, 45, 12, 37], [8, 50, 29, 41], [17, 33, 6, 44]]
+// Мин: 6, Макс: 50, Ср. арифм.: 28.50
+
+// Трёхмерный массив: [[[14, 27], [3, 19], [8, 11]], [[22, 5], [16, 9], [13, 7]]]
+// Мин: 3, Макс: 27, Ср. арифм.: 12.67
+
+// Что делает код?
+// Создание массивов
+
+// oneDim: 10 случайных чисел от 1 до 100.
+// twoDim: матрица 3 × 4 со числами от 1 до 100.
+// threeDim: куб 2 × 3 × 2 со числами от 1 до 100.
+
+// Обработка каждого массива
+
+// Минимум: начинаем с первого элемента, затем в цикле сравниваем все остальные и обновляем min, если находим меньшее число.
+// Максимум: аналогично, но ищем большее число.
+// Сумма и счётчик: накапливаем сумму всех элементов и считаем их количество.
+// Среднее: делим сумму на количество.
+
+// Вывод результатов
+
+// Для каждого массива печатаются:
+// * сам массив,
+// * минимум,
+// * максимум,
+// * среднее арифметическое (с округлением до 2 знаков).
+
+'
                                      data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
-                                     data-text-ru="">
+                                     data-tooltip-en="Arrays. Min Max Avg"
+                                     data-tooltip-tt="Массивлар. Минималь максималь уртача күрсәткеч"
+                                     data-tooltip-ru="Массивы. Мин Мах Ср. ар."
+                                     data-tooltip-current="Arrays. Min Max Avg"
+                                     data-text-en="Arrays. Min Max  Avg"
+                                     data-text-tt="Массивлар. Минималь максималь уртача күрсәткеч"
+                                     data-text-ru="Массивы. Мин Мах Ср.ар.">
                                 </div>
                                 <!-- / code block -->
 
                                 <!-- code block -->
                                 <div class="block" data-pro="true"
                                      draggable="true"
-                                     data-type="Onli_Code_"
-                                     data-code=""
+                                     data-type="Onli_Code_7_1"
+                                     data-code='// создаём одномерный, двумерный и трёхмерный массивы со случайными числами, 
+// затем вручную сортируем их (без использования встроенных методов sort()).
+
+// 1. Создаём массивы со случайными числами
+
+// Одномерный массив: 8 элементов, диапазон 1–100
+let oneDim = [];
+for (let i = 0; i < 8; i++) {
+    oneDim[i] = Math.floor(Math.random() * 100) + 1;
+}
+
+// Двумерный массив: 3 × 4, диапазон 1–100
+let twoDim = [];
+for (let i = 0; i < 3; i++) {
+    twoDim[i] = [];
+    for (let j = 0; j < 4; j++) {
+        twoDim[i][j] = Math.floor(Math.random() * 100) + 1;
+    }
+}
+
+// Трёхмерный массив: 2 × 3 × 3, диапазон 1–100
+let threeDim = [];
+for (let i = 0; i < 2; i++) {
+    threeDim[i] = [];
+    for (let j = 0; j < 3; j++) {
+        threeDim[i][j] = [];
+        for (let k = 0; k < 3; k++) {
+            threeDim[i][j][k] = Math.floor(Math.random() * 100) + 1;
+        }
+    }
+}
+
+// 2. Сортируем одномерный массив (метод пузырька)
+console.log("Одномерный массив (до):", oneDim);
+
+
+for (let i = 0; i < oneDim.length - 1; i++) {
+    for (let j = 0; j < oneDim.length - i - 1; j++) {
+        if (oneDim[j] > oneDim[j + 1]) {
+            let temp = oneDim[j];
+            oneDim[j] = oneDim[j + 1];
+            oneDim[j + 1] = temp;
+        }
+    }
+}
+
+console.log("Одномерный массив (после):", oneDim);
+
+
+// 3. Сортируем двумерный массив (каждую строку отдельно)
+console.log("\nДвумерный массив (до):");
+console.log(twoDim);
+
+
+for (let i = 0; i < 3; i++) {
+    // Сортируем строку twoDim[i]
+    for (let outer = 0; outer < 4 - 1; outer++) {
+        for (let inner = 0; inner < 4 - outer - 1; inner++) {
+            if (twoDim[i][inner] > twoDim[i][inner + 1]) {
+                let temp = twoDim[i][inner];
+                twoDim[i][inner] = twoDim[i][inner + 1];
+                twoDim[i][inner + 1] = temp;
+            }
+        }
+    }
+}
+
+console.log("Двумерный массив (после):");
+console.log(twoDim);
+
+
+// 4. Сортируем трёхмерный массив (каждый «слой» и каждую строку внутри слоя)
+console.log("\nТрёхмерный массив (до):");
+console.log(threeDim);
+
+
+for (let i = 0; i < 2; i++) {          // для каждого слоя
+    for (let j = 0; j < 3; j++) {       // для каждой строки в слое
+        // Сортируем строку threeDim[i][j]
+        for (let outer = 0; outer < 3 - 1; outer++) {
+            for (let inner = 0; inner < 3 - outer - 1; inner++) {
+                if (threeDim[i][j][inner] > threeDim[i][j][inner + 1]) {
+                    let temp = threeDim[i][j][inner];
+                    threeDim[i][j][inner] = threeDim[i][j][inner + 1];
+                    threeDim[i][j][inner + 1] = temp;
+                }
+            }
+        }
+    }
+}
+
+console.log("Трёхмерный массив (после):");
+console.log(threeDim);
+
+
+// Что делает код?
+
+// Создание массивов:
+// oneDim: 8 случайных чисел от 1 до 50.
+// twoDim: матрица 3 × 4 со числами от 1 до 30.
+// threeDim: куб 2 × 3 × 3 со числами от 1 до 20.
+
+// Сортировка одномерного массива
+
+// Используется метод пузырька:
+// Проходим по массиву, сравниваем соседние элементы.
+// Если левый больше правого — меняем их местами.
+// Повторяем, пока массив не будет отсортирован.
+
+// Сортировка двумерного массива
+
+// Сортируем каждую строку отдельно (внутренние циклы по j).
+// Внешний цикл i перебирает строки матрицы.
+
+// Сортировка трёхмерного массива
+
+// Для каждого «слоя» (i) и каждой строки внутри слоя (j) применяем сортировку пузырьком.
+// В итоге каждая строка в каждом слое становится упорядоченной.
+
+// Пример вывода (значения случайны):
+
+// Одномерный массив (до): [23, 7, 41, 15, 33, 2, 19, 8]
+// Одномерный массив (после): [2, 7, 8, 15, 19, 23, 33, 41]
+
+// Двумерный массив (до):
+// [[12, 28, 5, 17], [3, 22, 9, 14], [25, 6, 11, 1]]
+// Двумерный массив (после):
+// [[5, 12, 17, 28], [3, 9, 14, 22], [1, 6, 11, 25]]
+
+// Трёхмерный массив (до):
+// [[[4, 18, 7], [12, 3, 15], [9, 11, 2]], [[6, 1, 13], [8, 10, 5], [17, 14, 3]]]
+// Трёхмерный массив (после):
+// [[[4, 7, 18], [3, 12, 15], [2, 9, 11]], [[1, 6, 13], [5, 8, 10], [3, 14, 17]]]
+
+// Ключевые моменты:
+// * Нет встроенных sort() — сортировка реализована вручную через циклы и сравнения.
+// * Метод пузырька прост для понимания, но не самый эффективный (O(n²)).
+//       Для больших массивов (например, 1000+ элементов) это будет очень медленно.
+// * Вложенные циклы позволяют обрабатывать многомерные структуры.
+
+// Как улучшить (опционально)
+// * Для больших массивов можно реализовать более эффективные алгоритмы (например, быструю сортировку).
+// * Чтобы не дублировать код сортировки, можно было бы вынести логику в функцию.
+'
                                      data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
-                                     data-text-ru="">
+                                     data-tooltip-en="Arrays. Sorting."
+                                     data-tooltip-tt="Массивлар. Сортларга аеру."
+                                     data-tooltip-ru="Массивы. Сортировка."
+                                     data-tooltip-current="Arrays. Sorting."
+                                     data-text-en="Arrays. Sorting."
+                                     data-text-tt="Массивлар. Сортларга аеру."
+                                     data-text-ru="Массивы. Сортировка.">
                                 </div>
                                 <!-- / code block -->
 
                                 <!-- code block -->
                                 <div class="block" data-pro="true"
                                      draggable="true"
-                                     data-type="Onli_Code_"
-                                     data-code=""
+                                     data-type="Onli_Code_7_2"
+                                     data-code='// код на JavaScript, который:
+// 1. Создаёт одномерный, двумерный и трёхмерный массивы со случайными числами.
+// 2. Сортирует весь массив целиком (а не по строкам/слоям):
+// для 2D и 3D — сначала «сворачивает» в одномерный, сортирует,
+//     затем восстанавливает структуру;
+// 3. Выводит результаты до и после сортировки.
+
+// ! Вся сортировка — по значениям всех элементов массива, а не по строкам/слоям.
+// ! Сворачивание позволяет применить один алгоритм сортировки к многомерной структуре
+
+// 1. Задаём размеры массивов через переменные
+const ONE_DIM_SIZE = 8;
+
+const ROWS_2D = 3;
+const COLS_2D = 4;
+
+const LAYERS_3D = 2;
+const ROWS_3D = 3;
+const COLS_3D = 3;
+
+// 2. Создаём массивы со случайными числами
+
+// Одномерный массив: ONE_DIM_SIZE элементов, диапазон 1–100
+let oneDim = [];
+for (let i = 0; i < ONE_DIM_SIZE; i++) {
+    oneDim[i] = Math.floor(Math.random() * 100) + 1;
+}
+
+// Двумерный массив: ROWS_2D × COLS_2D, диапазон 1–100
+let twoDim = [];
+for (let i = 0; i < ROWS_2D; i++) {
+    twoDim[i] = [];
+    for (let j = 0; j < COLS_2D; j++) {
+        twoDim[i][j] = Math.floor(Math.random() * 100) + 1;
+    }
+}
+
+// Трёхмерный массив: LAYERS_3D × ROWS_3D × COLS_3D, диапазон 1–100
+let threeDim = [];
+for (let i = 0; i < LAYERS_3D; i++) {
+    threeDim[i] = [];
+    for (let j = 0; j < ROWS_3D; j++) {
+        threeDim[i][j] = [];
+        for (let k = 0; k < COLS_3D; k++) {
+            threeDim[i][j][k] = Math.floor(Math.random() * 100) + 1;
+        }
+    }
+}
+
+// 3. Сортируем одномерный массив (пузырьком)
+console.log("Одномерный массив (до):", oneDim);
+
+for (let i = 0; i < oneDim.length - 1; i++) {
+    for (let j = 0; j < oneDim.length - i - 1; j++) {
+        if (oneDim[j] > oneDim[j + 1]) {
+            let temp = oneDim[j];
+            oneDim[j] = oneDim[j + 1];
+            oneDim[j + 1] = temp;
+        }
+    }
+}
+
+console.log("Одномерный массив (после):", oneDim);
+
+// 4. Сортируем двумерный массив ЦЕЛИКОМ
+console.log("\nДвумерный массив (до):");
+console.log(twoDim);
+
+// Шаг 1: сворачиваем в одномерный
+let flatTwo = [];
+for (let i = 0; i < ROWS_2D; i++) {
+    for (let j = 0; j < COLS_2D; j++) {
+        flatTwo.push(twoDim[i][j]);
+    }
+}
+
+// Шаг 2: сортируем одномерный (пузырьком)
+for (let i = 0; i < flatTwo.length - 1; i++) {
+    for (let j = 0; j < flatTwo.length - i - 1; j++) {
+        if (flatTwo[j] > flatTwo[j + 1]) {
+            let temp = flatTwo[j];
+            flatTwo[j] = flatTwo[j + 1];
+            flatTwo[j + 1] = temp;
+        }
+    }
+}
+
+// Шаг 3: восстанавливаем структуру ROWS_2D × COLS_2D
+for (let i = 0; i < ROWS_2D; i++) {
+    for (let j = 0; j < COLS_2D; j++) {
+        twoDim[i][j] = flatTwo[i * COLS_2D + j];
+    }
+}
+
+console.log("Двумерный массив (после):");
+console.log(twoDim);
+
+// 5. Сортируем трёхмерный массив ЦЕЛИКОМ
+console.log("\nТрёхмерный массив (до):");
+console.log(threeDim);
+
+
+// Шаг 1: сворачиваем в одномерный
+let flatThree = [];
+for (let i = 0; i < LAYERS_3D; i++) {
+    for (let j = 0; j < ROWS_3D; j++) {
+        for (let k = 0; k < COLS_3D; k++) {
+            flatThree.push(threeDim[i][j][k]);
+        }
+    }
+}
+
+// Шаг 2: сортируем одномерный (пузырьком)
+for (let i = 0; i < flatThree.length - 1; i++) {
+    for (let j = 0; j < flatThree.length - i - 1; j++) {
+        if (flatThree[j] > flatThree[j + 1]) {
+            let temp = flatThree[j];
+            flatThree[j] = flatThree[j + 1];
+            flatThree[j + 1] = temp;
+        }
+    }
+}
+
+// Шаг 3: восстанавливаем структуру LAYERS_3D × ROWS_3D × COLS_3D
+for (let i = 0; i < LAYERS_3D; i++) {
+    for (let j = 0; j < ROWS_3D; j++) {
+        for (let k = 0; k < COLS_3D; k++) {
+            threeDim[i][j][k] = flatThree[i * (ROWS_3D * COLS_3D) + j * COLS_3D + k];
+        }
+    }
+}
+
+console.log("Трёхмерный массив (после):");
+console.log(threeDim);
+
+
+
+// Как это работает
+// 1. Создание массивов
+// * oneDim: 8 случайных чисел (1–100).
+// * twoDim: матрица 3×4 (числа 1–100).
+// * threeDim: куб 2×3×3 (числа 1–100).
+
+// 2. Сортировка одномерного массива
+// Стандартный пузырьковый алгоритм: сравниваем соседние элементы, меняем местами, если левый больше правого.
+
+// 3. Сортировка двумерного массива ЦЕЛИКОМ
+// * Сворачивание: проходим по всем элементам twoDim и складываем их в один массив flatTwo.
+// * Сортировка: сортируем flatTwo пузырьком.
+// * Восстановление: заполняем twoDim значениями из flatTwo по индексам: элемент [i][j] получает значение flatTwo[i*4 + j].
+
+// 4. Сортировка трёхмерного массива ЦЕЛИКОМ
+// * Сворачивание: тройной цикл — собираем все числа в flatThree.
+// * Сортировка: пузырьком.
+// * Восстановление: вычисляем индекс в flatThree для элемента [i][j][k] как i*9 + j*3 + k (поскольку в каждом слое 9 элементов, в строке — 3).
+
+// Пример вывода (значения случайны)
+
+// Одномерный массив (до): [23, 7, 41, 15, 33, 2, 19, 8]
+// Одномерный массив (после): [2, 7, 8, 15, 19, 23, 33, 41]
+
+// Двумерный массив (до):
+// [[12, 28, 5, 17], [3, 22, 9, 14], [25, 6, 11, 1]]
+// Двумерный массив (после):
+// [[1, 3, 5, 6], [9, 11, 12, 14], [17, 22, 25, 28]]
+
+// Трёхмерный массив (до):
+// [[[4, 18, 7], [12, 3, 15], [9, 11, 2]], [[6, 1, 13], [8, 10, 5], [17, 14, 3]]]
+// Трёхмерный массив (после):
+// [[[1, 2, 3], [3, 4, 5], [6, 7, 8]], [[9, 10, 11], [12, 13, 14], [15, 17, 18]]]
+
+
+                                     '
                                      data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
-                                     data-text-ru="">
+                                     data-tooltip-en="Arrays. Sorting 2."
+                                     data-tooltip-tt="Массивлар. Сортларга аеру 2."
+                                     data-tooltip-ru="Массивы. Сортировка 2."
+                                     data-tooltip-current="Arrays. Sorting 2."
+                                     data-text-en="Arrays. Sorting 2."
+                                     data-text-tt="Массивлар. Сортларга аеру 2."
+                                     data-text-ru="Массивы. Сортировка 2.">
                                 </div>
                                 <!-- / code block -->
 
