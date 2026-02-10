@@ -6346,23 +6346,89 @@ console.log(threeDim);
                                 <!-- code block -->
                                 <div class="block" data-pro="true"
                                      draggable="true"
-                                     data-type="Onli_Code_"
-                                     data-code=""
+                                     data-type="Onli_Code_7_3"
+                                     data-code="// 0.1 + 0.2 ≠ 0.3
+
+// https://runebook.dev/ru/docs/javascript/global_objects/number
+
+console.log('0.1 + 0.2 = ', 0.1 + 0.2); // Результат: 0.30000000000000004
+
+// Почему так происходит?
+
+// 0.1 в двоичной системе — это бесконечная дробь
+// 0.2 в двоичной системе — тоже бесконечная дробь
+// При их сложении возникают ошибки округления.
+
+// Еще примеры
+// 0.1 + 0.7 = 0.7999999999999999
+// 0.4 + 0.2 = 0.6000000000000001
+
+// console.log(0.1 + 0.2); // Выведет 0.30000000000000004
+// console.log(1.4 - 1);   // Выведет 0.3999999999999999
+
+// Решение
+// 1. toFixed()
+// 2. toPrecision()
+
+console.log('\n Решение \n');
+
+// (0.1 + 0.2).toPrecision(2);
+console.log('toPrecision()');
+console.log('(0.1 + 0.2).toPrecision(2); = ', (0.1 + 0.2).toPrecision(2)); // = 0.30
+
+
+// (0.1 + 0.2).toFixed(2);
+console.log('toFixed()');
+console.log('(0.1 + 0.2).toFixed(2); = ', (0.1 + 0.2).toFixed(2)); // = 0.30
+
+// (0.1 + 0.20).toFixed(1); 
+console.log('(0.1 + 0.20).toFixed(1); = ', (0.1 + 0.20).toFixed(1)); // 0.3
+
+
+// Решение. Метод умножения на 100
+// Принцип работы: преобразуем десятичные числа в целые, выполняем операции, затем делим обратно.
+console.log('Метод умножения на 100 \nfunction preciseSum');
+
+function preciseSum(a, b) {
+
+    // Умножаем на 100 для двух знаков после запятой
+    console.log( Math.round((a * 100) + (b * 100)) / 100 );
+}
+
+// Пример:
+preciseSum(0.1, 0.20); // 0.3
+
+// Функция принимает 3 параметра. числа и степень (по умолчанию 2.)
+console.log('Улучшенный вариант с поддержкой разной точности \n function preciseSum3');
+
+function preciseSum3(a, b, precision = 2) {
+    
+    const factor = Math.pow(10, precision);
+    console.log( Math.round((a * factor + b * factor)) / factor );
+}
+
+// Пример:
+preciseSum3(0.1, 0.2);        // 0.3
+preciseSum3(0.15, 0.25);      // 0.4
+preciseSum3(0.01, 0.02);      // 0.03
+preciseSum3(0.123, 0.456, 3); // 0.579
+
+                                     "
                                      data-editable=""
-                                     data-tooltip-en=""
-                                     data-tooltip-tt=""
-                                     data-tooltip-ru=""
-                                     data-tooltip-current=""
-                                     data-text-en=""
-                                     data-text-tt=""
-                                     data-text-ru="">
+                                     data-tooltip-en="0.1 + 0.2 ≠ 0.3"
+                                     data-tooltip-tt="0.1 + 0.2 ≠ 0.3"
+                                     data-tooltip-ru="0.1 + 0.2 ≠ 0.3"
+                                     data-tooltip-current="0.1 + 0.2 ≠ 0.3"
+                                     data-text-en="0.1 + 0.2 ≠ 0.3"
+                                     data-text-tt="0.1 + 0.2 ≠ 0.3"
+                                     data-text-ru="0.1 + 0.2 ≠ 0.3">
                                 </div>
                                 <!-- / code block -->
 
                                 <!-- code block -->
                                 <div class="block" data-pro="true"
                                      draggable="true"
-                                     data-type="Onli_Code_"
+                                     data-type="Onli_Code_7_4"
                                      data-code=""
                                      data-editable=""
                                      data-tooltip-en=""
@@ -6703,7 +6769,7 @@ console.log(threeDim);
                 e.stopPropagation();
                 workspaceItem.remove();
                 updateCodeOutput();
-                saveState();
+                //saveState();
             };
 
             controls.appendChild(upBtn);
@@ -6719,7 +6785,7 @@ console.log(threeDim);
 
             workspace.appendChild(workspaceItem);
             updateCodeOutput();
-            saveState();
+            //saveState();
             draggedBlock = null;
         });
 
@@ -6845,14 +6911,21 @@ console.log(threeDim);
                 html += block.textContent;
                 // Для примеров поля не редактируются
                 return html;
+            }
+            else if ( type === 'Onli_Code_7_0' || 'Onli_Code_7_1' || 'Onli_Code_7_2' || 'Onli_Code_7_3' || 'Onli_Code_7_4') {
+                html += block.textContent;
+                // Для примеров поля не редактируются
+                return html;
             } 
 
             return html;
         }
 
+
         // --- 6. Обновление сгенерированного кода с подсветкой ---
         // Функция для подсветки кода
         function highlightCode() {
+
             const codeElement = document.getElementById('code-output');
             
             // Проверяем, не подсвечен ли уже элемент
@@ -6860,6 +6933,18 @@ console.log(threeDim);
                 hljs.highlightElement(codeElement);
                 codeElement.dataset.highlighted = 'yes';
             }
+
+        // // //   // или
+        // // //      if (!codeElement.dataset.highlighted) {
+        // // //         hljs.highlightElement(codeElement);
+        // // //         codeElement.dataset.highlighted = true;
+        // // //     }
+
+        // if (!codeElement.dataset.highlighted) {
+        //     hljs.highlightElement(codeElement);
+        //     codeElement.dataset.highlighted = 'yes';
+        // }
+
         }
 
         // Функция для сброса подсветки
@@ -6867,13 +6952,16 @@ console.log(threeDim);
             const codeElement = document.getElementById('code-output');
             codeElement.dataset.highlighted = '';
             highlightCode();
+
         }
         
         // Обновляем код и подсветку
         function updateCodeOutput() {
             let code = '';
-            
 
+  const codeOutput = document.getElementById('code-output'); // Добавляем получение элемента
+
+            
             // Получаем все рабочие элементы
             const workspaceItems = document.querySelectorAll('.workspace-item');
             
@@ -6935,6 +7023,7 @@ console.log(threeDim);
             codeOutput.textContent = code;
             resetHighlight();  // Сброс подсветки перед новым применением
             highlightCode();   // Применение подсветки
+
         }
 
 
@@ -7066,6 +7155,15 @@ console.log(threeDim);
                 updateCodeOutput();
             }
         });
+
+        //  Решение проблемы с неэкранированным HTML
+        // Способ 1: Игнорировать предупреждения через конфигурацию
+        hljs.configure({
+            useBR: false,
+            highlightOnLoad: false,
+            ignoreUnescapedHTML: true
+        });
+            
 
     </script>
 </body>
